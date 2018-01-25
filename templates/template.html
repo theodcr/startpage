@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>Startpage</title>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <style>
+%(css)s
+  </style>
+</head>
+
+<body OnLoad="document.duckduckgo.q.focus();">
+  <div id="fullpage">
+    <img src="../templates/black.png">
+    <div id="container">
+      <div id="header">
+        <form method="get" action="https://duckduckgo.com/" name="duckduckgo">
+          <input type="text" placeholder="DuckDuckGo/Google" name="q">
+        </form>
+      </div>
+
+%(divs)s
+
+    </div>
+  </div>
+</body>
+</html>
+
