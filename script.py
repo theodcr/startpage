@@ -15,7 +15,7 @@ def import_links(directory=DIRECTORY, file_name=LINKS):
     """Imports the YAML data file."""
     with open(directory+file_name, 'r') as f:
         stream = f.read()
-    data = yaml.load(stream)
+    data = yaml.safe_load(stream)
     return data
 
 
@@ -23,7 +23,7 @@ def import_layout(directory=DIRECTORY, file_name=LAYOUT):
     """Imports the YAML layout file."""
     with open(directory+file_name, 'r') as f:
         stream = f.read()
-    layout = yaml.load(stream)
+    layout = yaml.safe_load(stream)
     return layout
 
 
