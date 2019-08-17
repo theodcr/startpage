@@ -6,14 +6,14 @@ import sys
 DIRECTORY = "files/"
 LINKS = "links.yaml"
 LAYOUT = "layout.yaml"
-CSS_PATH = "templates/style.css"
-HTML_PATH = "templates/template.html"
+CSS = "templates/style.css"
+HTML_TEMPLATE = "templates/template.html"
 HTML_FINAL = "startpage.html"
 
 
 def import_links(directory=DIRECTORY, file_name=LINKS):
     """Imports the YAML data file."""
-    with open(directory+file_name, 'r') as f:
+    with open(directory + file_name, 'r') as f:
         stream = f.read()
     data = yaml.safe_load(stream)
     return data
@@ -21,14 +21,13 @@ def import_links(directory=DIRECTORY, file_name=LINKS):
 
 def import_layout(directory=DIRECTORY, file_name=LAYOUT):
     """Imports the YAML layout file."""
-    with open(directory+file_name, 'r') as f:
+    with open(directory + file_name, 'r') as f:
         stream = f.read()
     layout = yaml.safe_load(stream)
     return layout
 
 
-def generate_page(layout, data, template_css=CSS_PATH,
-                  template_html=HTML_PATH):
+def generate_page(layout, data, template_css=CSS, template_html=HTML_TEMPLATE):
     """Generates the HTML and CSS of the startpage as a string"""
     with open(template_html, 'r') as f:
         html = f.read()
@@ -58,9 +57,8 @@ def generate_page(layout, data, template_css=CSS_PATH,
                 else:
                     checked = False
                 inputs += '<input id="{}" type="radio" name="{}"{}>\n'.format(
-                        tab_id,
-                        tabs_name,
-                        ' checked' if checked else '')
+                    tab_id, tabs_name, ' checked' if checked else ''
+                )
                 inputs += '<label for="{}">{}</label>\n'.format(tab_id, category)
                 sections += '<section id="{}">\n'.format(category)
                 css += '#{}:checked ~ #{},\n'.format(tab_id, category)
@@ -69,7 +67,7 @@ def generate_page(layout, data, template_css=CSS_PATH,
                     site = next(iter(link))
                     url = link[site]
                     sections += '<a href="{}">{}</a>\n'.format(url, site)
-                sections +="</section>\n"
+                sections += "</section>\n"
             links_divs += inputs
             links_divs += sections
             links_divs += '</div>\n\n'
@@ -87,7 +85,7 @@ def generate_page(layout, data, template_css=CSS_PATH,
 
 def write_page(html, directory=DIRECTORY, file_name=HTML_FINAL):
     """Exports the HTML in the page file."""
-    with open(directory+file_name, 'w') as f:
+    with open(directory + file_name, 'w') as f:
         f.write(html)
 
 
@@ -105,4 +103,3 @@ if __name__ == '__main__':
     layout = import_layout(directory)
     html, css = generate_page(layout, data)
     write_page(html, directory)
-

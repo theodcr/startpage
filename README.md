@@ -1,4 +1,3 @@
-
 # Startpage in pure HTML/CSS
 
 A simple startpage with custom links arranged in categories. Supports tabs thanks to CSS3.
@@ -11,7 +10,7 @@ Default background photo from [Unsplash](https://unsplash.com).
 
 ## How to use
 
-Create a folder for your new startpage, you can use the folder *files/* as a base.
+Create a folder for your new startpage with `cp -r files/ mystartpage/`.
 
 Fill the file *links.yaml* with your links like this:
 
@@ -33,3 +32,5 @@ Detail the layout you want in the file *layout.yaml* like this:
 ```
 
 Name the background image *background.jpg*.
+
+Execute the python script with `python script.py mystartpage/`. Startpage is generated in `mystartpage/startpage.html`.
