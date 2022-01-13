@@ -8,6 +8,10 @@ No Javascript, page is manually generated with the Python script.
 
 Default background photo from [Unsplash](https://unsplash.com).
 
+## Dependencies
+
+`pyyaml`
+
 ## How to use
 
 Create a folder for your new startpage with `cp -r files/ mystartpage/`.
@@ -33,4 +37,4 @@ Detail the layout you want in the file *layout.yaml* like this:
 
 Name the background image *background.jpg*.
 
-Execute the python script with `python script.py mystartpage/`. Startpage is generated in `mystartpage/startpage.html`.
+Execute the python script with `python3 script.py mystartpage/`. Startpage is generated in `mystartpage/startpage.html`.
