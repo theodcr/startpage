@@ -3,7 +3,7 @@ import sys
 
 import yaml
 
-DIRECTORY = "files/"
+DIRECTORY = "example/"
 LINKS = "links.yaml"
 LAYOUT = "layout.yaml"
 CSS = "templates/style.css"

@@ -14,7 +14,7 @@ Default background photo from [Unsplash](https://unsplash.com).
 
 ## How to use
 
-Create a folder for your new startpage with `cp -r files/ mystartpage/`.
+Create a folder for your new startpage with `cp -r example/ mystartpage/`.
 
 Fill the file *links.yaml* with your links like this:
 

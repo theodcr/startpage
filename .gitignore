@@ -1,5 +1,4 @@
 # subdirectories contain custom startpages
 */*
-!files/
-!templates/
-tags*
+!example/*
+!templates/*
